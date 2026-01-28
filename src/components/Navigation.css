@@ -1,0 +1,140 @@
+.medieval-nav {
+    background: linear-gradient(180deg, var(--sepia-dark), var(--sepia-base));
+    border-bottom: 3px solid var(--bronze);
+    box-shadow: 0 4px 12px var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: var(--spacing-sm) 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--spacing-md);
+}
+
+.nav-crest {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.clan-name {
+    font-family: var(--font-heading);
+    color: var(--parchment-light);
+    font-size: 1.5rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px var(--shadow);
+    letter-spacing: 0.1em;
+}
+
+.nav-signboards {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.signboard {
+    position: relative;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.signboard-rope {
+    width: 2px;
+    height: 15px;
+    background: linear-gradient(to bottom, #8b7355, #6b5d4f);
+    margin: 0 auto;
+    box-shadow: 1px 0 2px rgba(0, 0, 0, 0.3);
+}
+
+.signboard-content {
+    background: linear-gradient(135deg, #d4a574, #b8935f);
+    border: 2px solid var(--sepia-dark);
+    border-radius: 4px;
+    padding: var(--spacing-xs) var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    box-shadow:
+        0 4px 6px var(--shadow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.signboard-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent);
+    pointer-events: none;
+}
+
+.signboard-icon {
+    font-size: 1.2rem;
+    filter: drop-shadow(1px 1px 2px var(--shadow));
+}
+
+.signboard-text {
+    font-family: var(--font-heading);
+    color: var(--sepia-dark);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.05em;
+}
+
+.signboard:hover .signboard-content {
+    transform: translateY(-3px);
+    box-shadow:
+        0 6px 12px var(--shadow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    background: linear-gradient(135deg, #e0b585, #c9a370);
+}
+
+.signboard:hover .signboard-rope {
+    height: 18px;
+}
+
+.signboard.active .signboard-content {
+    background: linear-gradient(135deg, var(--gold), var(--bronze));
+    border-color: var(--gold);
+    box-shadow:
+        0 4px 8px var(--shadow),
+        0 0 20px rgba(212, 175, 55, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.signboard.active .signboard-text {
+    color: var(--parchment-light);
+    text-shadow: 1px 1px 3px var(--shadow);
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .nav-signboards {
+        gap: var(--spacing-sm);
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .signboard-content {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .signboard-text {
+        font-size: 0.85rem;
+    }
+}

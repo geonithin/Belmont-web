@@ -1,0 +1,48 @@
+.members-page {
+    min-height: 100vh;
+}
+
+.hall-background {
+    position: relative;
+    min-height: 100vh;
+    background-image: url('/assets/hall_of_legends.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hall-overlay {
+    position: relative;
+    min-height: 100vh;
+    background: rgba(244, 232, 208, 0.9);
+    padding: var(--spacing-xl) 0;
+}
+
+.members-intro {
+    max-width: 800px;
+    margin: var(--spacing-lg) auto;
+}
+
+.members-intro p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+}
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin: var(--spacing-xl) 0;
+    padding: 0 var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+    .members-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: var(--spacing-md);
+    }
+
+    .members-intro p {
+        font-size: 1rem;
+    }
+}

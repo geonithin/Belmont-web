@@ -1,0 +1,95 @@
+.quill-writer-container {
+    position: relative;
+    padding: var(--spacing-xl);
+    background-image: url('/assets/quill_writing.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px var(--shadow);
+}
+
+.quill-parchment {
+    background: rgba(244, 232, 208, 0.95);
+    padding: var(--spacing-lg);
+    border-radius: 4px;
+    max-width: 600px;
+    box-shadow:
+        0 4px 12px var(--shadow),
+        inset 0 0 40px rgba(139, 111, 71, 0.1);
+    border: 1px solid var(--sepia-base);
+}
+
+.quill-text {
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--sepia-dark);
+    line-height: 1.8;
+    text-align: center;
+    margin: 0;
+    animation: quillWrite 0.3s ease-out;
+}
+
+.quill-cursor {
+    display: inline-block;
+    animation: blink 1s infinite;
+    color: var(--sepia-dark);
+    font-style: normal;
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+.quill-icon {
+    position: absolute;
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+    font-size: 3rem;
+    filter: drop-shadow(2px 2px 4px var(--shadow));
+    animation: quillFloat 3s ease-in-out infinite;
+}
+
+@keyframes quillFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(-3deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .quill-writer-container {
+        min-height: 300px;
+        padding: var(--spacing-md);
+    }
+
+    .quill-parchment {
+        padding: var(--spacing-md);
+    }
+
+    .quill-text {
+        font-size: 1.2rem;
+    }
+
+    .quill-icon {
+        font-size: 2rem;
+    }
+}

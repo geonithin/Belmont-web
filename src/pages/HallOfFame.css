@@ -1,0 +1,157 @@
+.hall-of-fame-page {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #2a2520, #1a1510);
+    position: relative;
+    overflow: hidden;
+}
+
+.ancestral-hall {
+    position: relative;
+    min-height: 100vh;
+    padding: var(--spacing-xl) 0;
+    background-image:
+        radial-gradient(circle at 50% 0%, rgba(255, 200, 100, 0.1), transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(255, 200, 100, 0.05), transparent 40%);
+}
+
+.hall-mist {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 30% 40%, rgba(200, 200, 200, 0.03), transparent 30%),
+        radial-gradient(circle at 70% 60%, rgba(200, 200, 200, 0.03), transparent 30%);
+    animation: dustFloat 20s infinite;
+    pointer-events: none;
+}
+
+.fame-intro {
+    max-width: 800px;
+    margin: var(--spacing-lg) auto;
+}
+
+.fame-intro p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+}
+
+.legacy-plaques {
+    margin: var(--spacing-xl) auto;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.legacy-plaque {
+    background: linear-gradient(135deg, rgba(139, 134, 128, 0.9), rgba(168, 163, 158, 0.9));
+    border: 3px solid var(--stone-gray);
+    border-radius: 12px;
+    padding: var(--spacing-lg);
+    box-shadow:
+        0 8px 24px var(--shadow),
+        inset 0 2px 4px rgba(255, 255, 255, 0.1);
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.legacy-plaque::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' /%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.15'/%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+.plaque-statue {
+    font-size: 5rem;
+    filter: drop-shadow(0 4px 8px var(--shadow)) grayscale(100%);
+    flex-shrink: 0;
+    opacity: 0.7;
+}
+
+.plaque-content {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.legacy-name {
+    font-size: 2rem;
+    color: var(--parchment-light);
+    margin-bottom: var(--spacing-xs);
+    text-shadow: 2px 2px 4px var(--shadow);
+}
+
+.legacy-title {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--gold);
+    margin-bottom: var(--spacing-xs);
+}
+
+.legacy-years {
+    font-family: var(--font-heading);
+    color: var(--parchment-dark);
+    font-size: 0.95rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.legacy-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--parchment-light);
+    text-shadow: 1px 1px 2px var(--shadow);
+}
+
+.eternal-flame {
+    max-width: 600px;
+    margin: var(--spacing-xl) auto;
+    padding: var(--spacing-xl);
+}
+
+.flame-icon {
+    font-size: 4rem;
+    display: block;
+    margin: 0 auto var(--spacing-md);
+    filter: drop-shadow(0 0 20px rgba(255, 150, 0, 0.8));
+}
+
+.eternal-flame h3 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--ochre);
+}
+
+.eternal-flame p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+}
+
+@media (max-width: 768px) {
+    .legacy-plaque {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .plaque-statue {
+        font-size: 4rem;
+    }
+
+    .legacy-name {
+        font-size: 1.6rem;
+    }
+
+    .legacy-text {
+        font-size: 1rem;
+    }
+}

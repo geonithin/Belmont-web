@@ -1,0 +1,41 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.medieval-footer {
+  background: linear-gradient(180deg, var(--sepia-base), var(--sepia-dark));
+  border-top: 3px solid var(--bronze);
+  padding: var(--spacing-lg) var(--spacing-md);
+  margin-top: var(--spacing-xl);
+  box-shadow: 0 -4px 12px var(--shadow);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-content .wax-seal {
+  margin: 0 auto var(--spacing-sm);
+}
+
+.footer-content p {
+  font-family: var(--font-heading);
+  color: var(--parchment-light);
+  margin: var(--spacing-xs) 0;
+  font-size: 0.95rem;
+}
+
+.footer-motto {
+  font-style: italic;
+  color: var(--gold);
+  font-size: 1rem !important;
+  margin-top: var(--spacing-sm) !important;
+}
