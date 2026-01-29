@@ -1,11 +1,24 @@
 .medieval-nav {
-    background: linear-gradient(180deg, var(--sepia-dark), var(--sepia-base));
-    border-bottom: 3px solid var(--bronze);
+    background-image: url('/assets/header.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     box-shadow: 0 4px 12px var(--shadow);
     position: sticky;
     top: 0;
     z-index: 1000;
     padding: var(--spacing-sm) 0;
+}
+
+.medieval-nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(139, 111, 71, 0.3);
+    pointer-events: none;
 }
 
 .nav-container {
@@ -15,6 +28,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 var(--spacing-md);
+    position: relative;
+    z-index: 1;
 }
 
 .nav-crest {
